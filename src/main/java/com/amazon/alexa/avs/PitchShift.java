@@ -24,6 +24,8 @@ import be.tarsos.dsp.WaveformSimilarityBasedOverlapAdd.Parameters;
 import be.tarsos.dsp.io.jvm.AudioDispatcherFactory;
 import be.tarsos.dsp.io.jvm.AudioPlayer;
 import be.tarsos.dsp.resample.RateTransposer;
+
+import java.util.concurrent.ThreadLocalRandom;
 /**
  *
  * @author debdo
@@ -40,7 +42,7 @@ public class PitchShift {
 
     public PitchShift() {
         this.loop = false;
-        int cents = -450;
+        int cents = ThreadLocalRandom.current().nextInt(-800, 800 + 1);;
         this.currentFactor = 1 / Math.pow(Math.E, cents*Math.log(2)/1200/Math.log(Math.E)); ;
         
     }
