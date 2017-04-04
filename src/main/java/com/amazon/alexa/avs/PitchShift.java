@@ -96,15 +96,9 @@ public class PitchShift {
 
             Thread t = new Thread(dispatcher);
             t.start();
-            } catch (UnsupportedAudioFileException e) {
+            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException  e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-            } catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-            } catch (LineUnavailableException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-            }	
+            } 	
 	}
 }

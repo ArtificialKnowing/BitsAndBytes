@@ -924,7 +924,7 @@ public class AVSAudioPlayer {
                         // Bits and Bytes
                         // Convert mp3 file returned from Amazon to wav format.
                         // Change the pitch of Alexa's voice.
-                        if (!fromResource) {
+                        if (!fromResource && controller.isEmotionAnalyticsEnabled()) {
                             String wavPath = System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "Alexa.wav";
                             new Converter().convert(inpStream, wavPath, null, null);
                             File wavFile = new File(wavPath);
